@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   word-break: break-all;
+  max-width: 100%;
 }
 html,body {
   width: 100%;

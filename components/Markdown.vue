@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import Markdownit from 'markdown-it'
-import { computed } from 'vue'
-import { highlight } from '../utils/highlight'
-import '../assets/css/markdown.css'
+import { highlight } from '@/utils';
+import Markdownit from 'markdown-it';
+import { computed } from 'vue';
+import '@/assets/css/markdown.css';
 
 const props = defineProps<{
-  value?: string
-}>()
+  value?: string;
+}>();
 
-const md = new Markdownit({ highlight })
+const md = new Markdownit({ highlight });
 
 const result = computed(() => {
-  return md.render(props.value)
-})
+  return md.render(props.value);
+});
 </script>
 
 <template>

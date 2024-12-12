@@ -1,8 +1,8 @@
 ---
 title: "关于"
 date: "2024-12-11"
+post: false
 ---
-
 
 基于 nuxt 的极简博客
 

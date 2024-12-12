@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const route = useRoute()
-const { tag } = route.params
+const route = useRoute();
+const { tag } = route.params;
 
 const { data } = await useFetch(`/api/content`, { query: {
   tag,
-} })
+} });
 </script>
 
 <template>
@@ -17,7 +17,7 @@ const { data } = await useFetch(`/api/content`, { query: {
         </CLink>
         <div class="flex gap-4">
           <div class="flex gap-2">
-            <CLink v-for="t in item.params.data.tags" :key="t" :to="`/tag/${t}`">
+            <CLink v-for="t in item.params.data.tags" :key="t" :to="`/tag/${t}`" class="text-blue-400 font-bold">
               #{{ t }}
             </CLink>
           </div>

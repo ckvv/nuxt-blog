@@ -1,7 +1,7 @@
-import { parseContent } from '@/utils/parseContent'
+import { parseContent } from '@/utils/server';
 
 export default defineEventHandler(async (event) => {
-  const runtimeConfig = useRuntimeConfig()
+  const runtimeConfig = useRuntimeConfig();
   const { tag } = getQuery(event);
-  return parseContent(runtimeConfig.content, { tag })
-})
+  return parseContent(runtimeConfig.content, { tag });
+});
