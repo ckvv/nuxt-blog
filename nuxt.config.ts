@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath, URL } from 'node:url';
-import { parseContent } from './utils';
+import { parseContent } from './utils/server';
 
-const contents = await parseContent(fileURLToPath(new URL('./content', import.meta.url)));
+const contents = await parseContent(fileURLToPath(new URL('./content', import.meta.url)), { post: true });
 
 const posts = contents.map(v => `/post${v.path}`);
 const tags = Array.from(new Set(contents.map(v => v.params.data.tags).flat(1))).map(v => `/tag/${v}`);
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: [...posts, ...tags, '/api/rss.json'],
+      routes: [...posts, ...tags, '/api/rss.xml'],
     },
   },
 });

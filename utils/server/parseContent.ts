@@ -9,7 +9,7 @@ export async function parseContent(pattern: string, options: any = {}) {
     try {
       const params = await parseMd(value, { base: pattern, ...options });
 
-      if (params.params.data.draft || params.params.data.post === false) {
+      if (params.params.data.draft || (params.params.data.post === false && !options.post)) {
         continue;
       }
       if (options.tag && (!Array.isArray(params.params.data.tags) || !params.params.data.tags.includes(options.tag))) {
