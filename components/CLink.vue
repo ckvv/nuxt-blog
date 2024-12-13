@@ -1,5 +1,6 @@
 <script setup lang="ts">
-defineProps<{
+const { underline = true } = defineProps<{
+  underline?: boolean;
   active?: boolean;
   to: string;
   options?: any;
@@ -7,8 +8,8 @@ defineProps<{
 </script>
 
 <template>
-  <div class="group clink cursor-pointer shrink-0 select-none" @click="navigateTo(to, options)">
+  <div class="group clink cursor-pointer shrink-0 select-none relative flex items-center" @click="navigateTo(to, options)">
     <slot />
-    <div class="h-1 bg-blue-300 w-0 group-hover:w-full transition-width duration-500 ease-in-out" :class="{ 'w-full': active }" />
+    <div v-if="underline" class="h-1 bg-blue-300 w-0 group-hover:w-full transition-width duration-500 ease-in-out absolute -bottom-2" :class="{ 'w-full': active }" />
   </div>
 </template>

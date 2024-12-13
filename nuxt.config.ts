@@ -26,8 +26,14 @@ export default defineNuxtConfig({
         text: '关于',
         link: '/post/about',
       }, {
-        text: '订阅',
+        text: 'RSS',
         link: '/api/rss.xml',
+        options: {
+          external: true,
+        },
+      }, {
+        icon: 'github',
+        link: `https://github.com/ckvv/${name}`,
         options: {
           external: true,
         },
