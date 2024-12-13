@@ -9,7 +9,6 @@ const { data } = await useFetch(`/api/content`, { query: {
 
 <template>
   <div class="tag-content">
-    <TopBar />
     <div class="flex flex-col gap-4">
       <div v-for="(item, index) in data" :key="index" class="flex justify-between gap-4">
         <CLink :to="`/post${item.path}`" class="flex-grow text-xl">

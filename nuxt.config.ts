@@ -12,6 +12,26 @@ export default defineNuxtConfig({
   runtimeConfig: {
     markdown: {},
     content: fileURLToPath(new URL('./content', import.meta.url)),
+    public: {
+      title: '',
+      description: '',
+      nav: [{
+        text: '博客',
+        link: '/',
+      }, {
+        text: '标签',
+        link: '/tag',
+      }, {
+        text: '关于',
+        link: '/post/about',
+      }, {
+        text: '订阅',
+        link: '/api/rss.xml',
+        options: {
+          external: true,
+        },
+      }],
+    },
   },
   modules: ['@nuxt/ui'],
   ui: {

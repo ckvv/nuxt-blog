@@ -1,32 +1,26 @@
 <script setup lang="ts">
-import { useElementHover } from '@vueuse/core';
+const runtimeConfig = useRuntimeConfig();
 
-const navs = [{
-  name: '博客',
-  value: '/',
-}, {
-  name: '标签',
-  value: '/tag',
-}, {
-  name: '关于',
-  value: '/post/about',
-}, {
-  name: '订阅',
-  value: '/api/rss.xml',
-  options: {
-    external: true,
-  },
-}];
+const navs = runtimeConfig.public.nav as { text: string; link: string; options: any }[];
+
+const isShowMDNav = ref(false);
 </script>
 
 <template>
-  <div class="top-bar my-4 flex justify-between pb-12">
+  <div class="top-bar my-4 flex justify-between">
     <div class="text-2xl shrink-0">
       hugo-blog
     </div>
-    <div class="flex gap-8 text-2xl">
-      <CLink v-for="nav in navs" :key="nav.value" :to="nav.value" :options="nav.options">
-        {{ nav.name }}
+    <div class="gap-8 text-2xl hidden md:flex">
+      <CLink v-for="nav in navs" :key="nav.text" :to="nav.link" :options="nav.options">
+        {{ nav.text }}
+      </CLink>
+    </div>
+
+    <UIcon name="i-custom-menu" class="text-2xl cursor-pointer md:hidden" @click="isShowMDNav = true" />
+    <div v-if="isShowMDNav" class="flex flex-col w-full bg-white leading-loose text-2xl absolute text-center">
+      <CLink v-for="nav in navs" :key="nav.text" :to="nav.link" :options="nav.options" class="border-b border-gray-300">
+        {{ nav.text }}
       </CLink>
     </div>
   </div>

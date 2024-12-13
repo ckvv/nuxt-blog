@@ -19,7 +19,9 @@ html,body {
 #__nuxt {
   width: 1000px;
   max-width: min(100vw, 1000px);
-}
-#__nuxt>div {
   margin: 1em;
+  position: relative;
 }
+/* #__nuxt>div {
+  margin: 1em;
+} */

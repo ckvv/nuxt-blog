@@ -23,7 +23,6 @@ async function decryptContent(data: MDINFO, message: string = '该文章被加�
 </script>
 
 <template>
-  <TopBar />
   <div class="post-content">
     <div class="text-4xl font-bold my-4">
       {{ data?.params?.data?.title || data?.name }}
