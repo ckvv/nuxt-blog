@@ -20,15 +20,18 @@ const route = useRoute();
           <template v-if="nav.text">
             {{ nav.text }}
           </template>
-          <UIcon :name="`i-custom-${nav.icon}`" class="cursor-pointer" />
+          <UIcon v-if="nav.icon" :name="`i-custom-${nav.icon}`" class="cursor-pointer" />
         </CLink>
       </div>
       <UIcon v-if="!isShowMDNav" name="i-custom-menu" class="text-2xl cursor-pointer md:hidden" @click="isShowMDNav = true" />
       <UIcon v-else name="i-custom-close" class="text-2xl cursor-pointer md:hidden" @click="isShowMDNav = false" />
     </div>
     <div v-if="isShowMDNav" class="flex flex-col w-full bg-white leading-loose text-2xl text-center pb-8 border-t border-gray-300">
-      <CLink v-for="nav in navs" :key="nav.text" :to="nav.link" :options="nav.options" class="border-b border-gray-300">
-        {{ nav.text }}
+      <CLink v-for="nav in navs" :key="nav.text" :to="nav.link" :options="nav.options" class="border-b border-gray-300 justify-center" :underline="false">
+        <template v-if="nav.text">
+          {{ nav.text }}
+        </template>
+        <UIcon v-if="nav.icon" :name="`i-custom-${nav.icon}`" class="cursor-pointer h-[49px]" />
       </CLink>
     </div>
   </div>

@@ -29,13 +29,17 @@ export default defineNuxtConfig({
         text: 'RSS',
         link: '/api/rss.xml',
         options: {
-          external: true,
+          open: {
+            target: '_blank',
+          },
         },
       }, {
         icon: 'github',
         link: `https://github.com/ckvv/${name}`,
         options: {
-          external: true,
+          open: {
+            target: '_blank',
+          },
         },
       }],
     },
