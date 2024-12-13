@@ -1,8 +1,10 @@
 {
-  "name": "nuxt-bog",
+  "name": "nuxt-blog",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca",
+  "description": "一个基于 Nuxt 的极简博客系统",
+  "license": "MIT",
   "scripts": {
     "lint": "eslint . --fix",
     "build": "nuxt build",

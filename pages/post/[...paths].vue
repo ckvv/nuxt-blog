@@ -40,10 +40,10 @@ async function decryptContent(data: MDINFO, message: string = '该文章被加�
     <Markdown v-if="!data?.params?.data?.encrypt || _content" :value="_content || data?.params?.content" />
     <div v-else class="text-center m-4">
       <div class="text-xl my-8">
-        该篇文章已加密
+        该篇文章已经过加密
       </div>
       <div class="cursor-pointer hover:text-blue-400 font-bold text-4xl" @click="decryptContent(data)">
-        点击输入密码
+        点击查看
       </div>
     </div>
   </div>

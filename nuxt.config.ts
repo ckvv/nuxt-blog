@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath, URL } from 'node:url';
+import { description, name } from './package.json';
 import { parseContent } from './utils/server';
 
 const contents = await parseContent(fileURLToPath(new URL('./content', import.meta.url)), { post: true });
@@ -13,8 +14,8 @@ export default defineNuxtConfig({
     markdown: {},
     content: fileURLToPath(new URL('./content', import.meta.url)),
     public: {
-      title: '',
-      description: '',
+      title: name,
+      description,
       nav: [{
         text: '博客',
         link: '/',
