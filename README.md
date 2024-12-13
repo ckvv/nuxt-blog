@@ -29,7 +29,7 @@ pnpm generate
 
 ## 文档
 
-有关更多详细信息，请阅读基于该项目构建的[文档](https://hugo-coder.netlify.app/)。
+有关更多详细信息，请阅读基于该项目构建的[文档](https://nuxt-blog-site.netlify.app)。
 
 ## 感谢
 
