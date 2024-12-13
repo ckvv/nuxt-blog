@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useElementHover } from '@vueuse/core';
+
 const navs = [{
   name: '博客',
   value: '/',

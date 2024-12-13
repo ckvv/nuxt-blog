@@ -12,16 +12,19 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^3.11.2",
     "@nuxt/ui": "3.0.0-alpha.10",
-    "eslint": "^9.16.0",
+    "@vueuse/core": "^12.0.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.10.0",
     "markdown-it": "^14.1.0",
     "nuxt": "^3.14.1592",
-    "sass-embedded": "^1.82.0",
-    "tailwindcss": "4.0.0-beta.6",
     "vue": "latest",
     "vue-router": "4.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.11.2",
+    "eslint": "^9.16.0",
+    "sass-embedded": "^1.82.0",
+    "tailwindcss": "4.0.0-beta.6"
   }
 }

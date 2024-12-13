@@ -10,6 +10,7 @@ const tags = Array.from(new Set(contents.map(v => v.params.data.tags).flat(1))).
 export default defineNuxtConfig({
   ssr: true,
   runtimeConfig: {
+    markdown: {},
     content: fileURLToPath(new URL('./content', import.meta.url)),
   },
   modules: ['@nuxt/ui'],
