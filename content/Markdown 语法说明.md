@@ -4,7 +4,7 @@ tags: ["markdown"]
 date: "2024-12-11"
 ---
 
-# markdown 结构
+## markdown 结构
 
 结构参考 [gohugo](https://gohugo.io/)  [vitepress](https://vitepress.dev/), `---` 分割开的为文档参数区域.
 
@@ -16,7 +16,36 @@ date: "2024-12-11"
 <!-- 博客正文区域 -->
 ```
 
-# 文档参数
+# MDC 语法
+
+你可以使用 MDC 语法来增强 Markdown，让你能够在 Markdown 中将 Vue 组件与 slots 和 props 集成。https://content3.nuxt.dev/docs/files/markdown#mdc-syntax
+
+`components/global/Hello.vue`
+
+```vue
+<script setup>
+const name = defineModel('name', { default: 'Hello World!' });
+</script>
+
+<template>
+  <h1><slot /> {{ name }}</h1>
+  <UInput v-model="name" />
+</template>
+```
+
+`MDC`
+
+```markdown
+::hello{:name="anon"}
+Hello:
+::
+```
+
+::hello{:name="anon"}
+Hello:
+::
+
+## 文档参数
 
 ```yaml
 ---

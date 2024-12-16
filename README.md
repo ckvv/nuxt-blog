@@ -19,13 +19,13 @@ pnpm generate
 
 + 无需服务器静态 HTML 打包支持
 + 无需配置路由, 只需 Markdown 即可轻松创建美观的文档站点。
++ MDC 语法支持: https://content3.nuxt.dev/docs/files/markdown#mdc-syntax
 + 博客加密功能
 
 ## 计划添加的功能
 
 - [ ] 评论扩展支持
 - [ ] Markdown 菜单
-- [ ] Markdown 功能扩展: 自定义Vue 语法组件支持
 
 ## 文档
 

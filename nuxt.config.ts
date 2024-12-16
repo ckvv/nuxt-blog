@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     payloadExtraction: false,
   },
   runtimeConfig: {
-    markdown: {},
+    markdown: {
+    },
     content: fileURLToPath(new URL('./content', import.meta.url)),
     public: {
       title: name,
@@ -47,7 +48,7 @@ export default defineNuxtConfig({
       }],
     },
   },
-  modules: ['@nuxt/ui'],
+  modules: ['@nuxtjs/mdc', '@nuxt/ui'],
   ui: {
     fonts: false,
   },
@@ -61,6 +62,9 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
   vite: {
+    optimizeDeps: {
+      include: ['debug'],
+    },
     plugins: [
     ],
   },
