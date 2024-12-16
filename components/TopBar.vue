@@ -10,7 +10,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <div class="top-bar flex flex-wrap sticky top-0 bg-white">
+  <div class="top-bar flex flex-wrap sticky z-10 top-0 bg-white">
     <div class="w-full flex justify-between items-center h-16">
       <div class="text-2xl shrink-0 cursor-pointer" @click="navigateTo('/')">
         {{ title }}
