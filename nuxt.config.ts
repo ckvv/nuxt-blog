@@ -10,12 +10,12 @@ const tags = Array.from(new Set(contents.map(v => v.params.data.tags).flat(1))).
 
 export default defineNuxtConfig({
   ssr: true,
+  modules: ['@nuxtjs/mdc', '@nuxt/ui'],
+  mdc: {},
   experimental: {
     payloadExtraction: false,
   },
   runtimeConfig: {
-    markdown: {
-    },
     content: fileURLToPath(new URL('./content', import.meta.url)),
     public: {
       title: name,
@@ -48,7 +48,6 @@ export default defineNuxtConfig({
       }],
     },
   },
-  modules: ['@nuxtjs/mdc', '@nuxt/ui'],
   ui: {
     fonts: false,
   },
@@ -65,8 +64,6 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['debug'],
     },
-    plugins: [
-    ],
   },
   nitro: {
     prerender: {
