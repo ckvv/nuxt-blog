@@ -6,10 +6,13 @@ import { parseContent } from './utils/server';
 const contents = await parseContent(fileURLToPath(new URL('./content', import.meta.url)), { post: true });
 
 const posts = contents.map(v => `/post${v.path}`);
-const tags = Array.from(new Set(contents.map(v => v.params.data.tags).flat(1))).map(v => `/tag/${v}`);
+const tags = Array.from(new Set(contents.map(v => v.params.data.tags).flat(1))).filter(v => v).map(v => `/tag/${v}`);
 
 export default defineNuxtConfig({
   ssr: true,
+  experimental: {
+    payloadExtraction: false,
+  },
   runtimeConfig: {
     markdown: {},
     content: fileURLToPath(new URL('./content', import.meta.url)),

@@ -12,7 +12,7 @@ const route = useRoute();
 <template>
   <div class="top-bar flex flex-wrap sticky z-10 top-0 bg-white">
     <div class="w-full flex justify-between items-center h-16">
-      <div class="text-2xl shrink-0 cursor-pointer" @click="navigateTo('/')">
+      <div class="text-2xl shrink-0 cursor-pointer" @click="navigateTo('/', { external: true })">
         {{ title }}
       </div>
       <div class="gap-8 text-2xl hidden md:flex items-center">
