@@ -10,8 +10,8 @@ const { data } = await useFetch(`/api/content`);
           {{ item.name }}
         </CLink>
         <div class="flex gap-x-4">
-          <div class="flex gap-2">
-            <CLink v-for="tag in item.params.data.tags" :key="tag" class="text-blue-500 font-bold" :to="`/tag/${tag}`">
+          <div class="flex gap-2 text-lg">
+            <CLink v-for="tag in item.params.data.tags" :key="tag" class="text-sky-700 font-bold" :to="`/tag/${tag}`">
               #{{ tag }}
             </CLink>
           </div>

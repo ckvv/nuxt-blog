@@ -33,8 +33,8 @@ async function decryptContent(data: MDINFO, message: string = '该文章被加�
       {{ data?.params?.data?.title || data?.name }}
     </div>
     <div class="flex justify-between items-center">
-      <div class="flex gap-2 my-4">
-        <CLink v-for="tag in toArray(data?.params?.data?.tags)" :key="tag" class="text-blue-500 font-bold" :to="`/tag/${tag}`">
+      <div class="flex gap-2 my-4 text-lg">
+        <CLink v-for="tag in toArray(data?.params?.data?.tags)" :key="tag" class="text-sky-700 font-bold" :to="`/tag/${tag}`">
           #{{ tag }}
         </CLink>
       </div>
@@ -47,7 +47,7 @@ async function decryptContent(data: MDINFO, message: string = '该文章被加�
       <div class="text-xl my-8">
         该篇文章已经过加密
       </div>
-      <div class="cursor-pointer hover:text-blue-500 font-bold text-4xl" @click="decryptContent(data)">
+      <div class="cursor-pointer hover:text-sky-700 font-bold text-4xl" @click="decryptContent(data)">
         点击查看
       </div>
     </div>
