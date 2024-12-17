@@ -15,6 +15,13 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
   },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'zh-Hans',
+      },
+    },
+  },
   runtimeConfig: {
     content: fileURLToPath(new URL('./content', import.meta.url)),
     public: {
