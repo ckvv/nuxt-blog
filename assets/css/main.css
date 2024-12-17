@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "./markdown.css";
 * {
   box-sizing: border-box;
   word-break: break-all;
