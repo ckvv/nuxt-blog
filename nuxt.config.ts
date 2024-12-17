@@ -71,6 +71,9 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['debug'],
     },
+    css: {
+      transformer: 'lightningcss',
+    },
   },
   nitro: {
     prerender: {
