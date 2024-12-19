@@ -5,6 +5,7 @@ import { parseContent } from './utils/server';
 
 const contents = await parseContent(fileURLToPath(new URL('./content', import.meta.url)), { post: true });
 
+const baseURL = '';
 const posts = contents.map(v => `/post${v.path}`);
 const tags = Array.from(new Set(contents.map(v => v.params.data.tags).flat(1))).filter(v => v).map(v => `/tag/${v}`);
 
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
     payloadExtraction: false,
   },
   app: {
+    baseURL,
     head: {
       htmlAttrs: {
         lang: 'zh-Hans',
@@ -29,16 +31,16 @@ export default defineNuxtConfig({
       description,
       nav: [{
         text: '博客',
-        link: '/',
+        link: `/`,
       }, {
         text: '标签',
-        link: '/tag',
+        link: `/tag`,
       }, {
         text: '关于',
-        link: '/post/about',
+        link: `/post/about`,
       }, {
         text: 'RSS',
-        link: '/api/rss.xml',
+        link: `/api/rss.xml`,
         options: {
           open: {
             target: '_blank',
@@ -77,7 +79,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: [...posts, ...tags, '/api/rss.xml'],
+      routes: [...posts, ...tags, `${baseURL}/api/rss.xml`],
     },
   },
 });

@@ -22,9 +22,9 @@
     "vue-router": "4.5.0"
   },
   "devDependencies": {
-    "lightningcss": "1.28.2",
     "@antfu/eslint-config": "^3.12.0",
     "eslint": "^9.17.0",
+    "lightningcss": "1.28.2",
     "tailwindcss": "4.0.0-beta.6"
   }
 }

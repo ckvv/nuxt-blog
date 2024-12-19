@@ -7,5 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <MDC class="markdown-container" :value="value" tag="article" />
+  <div>
+    <MDC class="markdown-container" :value="value" tag="article" />
+  </div>
 </template>

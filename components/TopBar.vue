@@ -12,9 +12,9 @@ const route = useRoute();
 <template>
   <div class="top-bar flex flex-wrap sticky z-10 top-0 bg-white">
     <div class="w-full flex justify-between items-center h-16">
-      <div class="text-2xl shrink-0 cursor-pointer" @click="navigateTo('/', { external: true })">
+      <CLink class="text-2xl" to="/" :options="{ external: true }" :underline="false">
         {{ title }}
-      </div>
+      </CLink>
       <div class="gap-8 text-2xl hidden md:flex items-center">
         <CLink v-for="nav in navs" :key="nav.text" :to="nav.link" :options="nav.options" :active="nav.link === route.path" :underline="!!nav.text">
           <template v-if="nav.text">
