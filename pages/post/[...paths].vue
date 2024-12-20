@@ -44,7 +44,6 @@ async function decryptContent(data: MDINFO, message: string = '该文章被加�
     <div v-else class="text-center m-4">
       <div class="text-xl my-8">
         该篇文章已经过加密
-        {{ data?.params?.content }}
       </div>
       <div class="cursor-pointer hover:text-sky-700 font-bold text-4xl" @click="decryptContent(data)">
         点击查看
