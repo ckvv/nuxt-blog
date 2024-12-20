@@ -24,9 +24,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  future: {
+    // https://github.com/nuxt/nuxt/issues/29798#issuecomment-2466833928
+    compatibilityVersion: 4,
+  },
   imports: {
     dirs: [
-      './shared/utils',
     ],
   },
   runtimeConfig: {
@@ -84,7 +87,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: [...posts, ...tags, `${baseURL}/api/rss.xml`],
+      routes: [...posts, ...tags, `/api/rss.xml`],
     },
   },
 });

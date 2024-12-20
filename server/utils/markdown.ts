@@ -1,24 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { parse } from 'node:path';
-import { encrypt } from '../../shared/utils';
 import { parseMarkdown } from '@nuxtjs/mdc/runtime';
 import matter from 'gray-matter';
-
-function parseFrontMatter(content: string) {
-  const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
-  const match = content.match(frontMatterRegex);
-  if (!match) {
-    return null;
-  }
-
-  const yaml = match[1];
-  const frontMatter = {} as Record<string, any>;
-  yaml.split('\n').forEach((line) => {
-    const [key, value] = line.split(':').map(s => s.trim());
-    frontMatter[key] = value?.replace(/^"|"$/g, ''); // 去掉引号
-  });
-  return frontMatter;
-}
 
 export interface MDPARAMS {
   encrypt: boolean;
