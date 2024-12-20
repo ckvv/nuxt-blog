@@ -1,5 +1,4 @@
 import { join } from 'node:path';
-import { parseMd } from '@/utils/server';
 
 export default defineEventHandler((event) => {
   const runtimeConfig = useRuntimeConfig();

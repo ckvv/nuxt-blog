@@ -1,5 +1,3 @@
-import { parseContent } from '@/utils/server';
-
 export default defineEventHandler(async (_event) => {
   const runtimeConfig = useRuntimeConfig();
   const contents = await parseContent(runtimeConfig.content);

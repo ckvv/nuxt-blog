@@ -1,4 +1,3 @@
-import { parseContent } from '@/utils/server';
 import { name } from '~/package.json';
 
 export default defineEventHandler(async (event) => {

@@ -1,8 +1,8 @@
 import { readFile } from 'node:fs/promises';
 import { parse } from 'node:path';
+import { encrypt } from '../../shared/utils';
 import { parseMarkdown } from '@nuxtjs/mdc/runtime';
 import matter from 'gray-matter';
-import { encrypt } from '../crypto';
 
 function parseFrontMatter(content: string) {
   const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
