@@ -5,7 +5,7 @@ import { parseContent } from './server/utils/parseContent';
 
 const contents = await parseContent(fileURLToPath(new URL('./content', import.meta.url)), { post: true });
 
-const baseURL = '';
+const baseURL = '/nuxt-blog';
 const posts = contents.map(v => `/post${v.path}`);
 const tags = Array.from(new Set(contents.map(v => v.params.data.tags).flat(1))).filter(v => v).map(v => `/tag/${v}`);
 
@@ -88,6 +88,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [...posts, ...tags, `/api/rss.xml`],
+      failOnError: false,
     },
   },
 });
