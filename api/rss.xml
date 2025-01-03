@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>nuxt-blog</title>
+        <link>https://www.example.com/</link>
+        <description>This is an RSS feed</description>
+        <item>
+            <title>Markdown 语法说明</title>
+            <link>/Markdown 语法说明</link>
+        </item><item>
+            <title>这是篇加密文档,密码为`qwer`</title>
+            <link>/加密文档</link>
+        </item><item>
+            <title>项目介绍</title>
+            <link>/项目介绍</link>
+        </item>      
+    </channel>
+</rss>
